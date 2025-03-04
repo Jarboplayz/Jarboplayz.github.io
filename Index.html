@@ -1,0 +1,90 @@
+<!-- index.html github.io -->
+<!-- Ily❤️ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors - Love Edition</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        .choices button {
+            background-color: white;
+            color: #ff758c;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .choices button:hover {
+            background-color: #ffcad4;
+        }
+
+        #result {
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rock, Paper, Scissors</h1>
+        <p>Pick one and let's see if you love me! ❤️</p>
+        <div class="choices">
+            <button onclick="playGame('rock')">👊 Rock</button>
+            <button onclick="playGame('paper')">✋ Paper</button>
+            <button onclick="playGame('scissors')">✌️ Scissors</button>
+        </div>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function playGame(playerChoice) {
+            let gameChoice;
+            
+            if (playerChoice === "rock") {
+                gameChoice = "scissors";
+            } else if (playerChoice === "paper") {
+                gameChoice = "rock";
+            } else if (playerChoice === "scissors") {
+                gameChoice = "paper";
+            }
+
+            document.getElementById("result").innerHTML = `
+                You picked <b>${playerChoice}</b>.<br>
+                I picked <b>${gameChoice}</b>.<br>
+                <span style="color: yellow;">You win! That means you love me! ❤️</span>
+            `;
+        }
+    </script>
+</body>
+</html>
